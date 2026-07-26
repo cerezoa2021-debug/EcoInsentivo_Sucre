@@ -255,15 +255,18 @@ return [
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Basic-Configuration
     |
     */
+     // to que estos XD
+    'use_route_url' => true,
 
-    'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'dashboard',
+
+
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
     'password_reset_url' => 'password/reset',
     'password_email_url' => 'password/email',
-    'profile_url' => false,
+    'profile_url' => 'profile.edit',
     'disable_darkmode_routes' => false,
 
     /*
@@ -333,6 +336,23 @@ return [
             'url' => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
         ],
+        
+        [
+            'text' => 'centros de acopio',
+            'url' => 'centros-acopio',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Empresas Aliadas',
+            'url' => 'empresas-aliadas',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Puntos',
+            'url' => 'puntos',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+
         [
             'text' => 'change_password',
             'url' => 'admin/settings',
