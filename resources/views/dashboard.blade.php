@@ -16,5 +16,5 @@
 
 
 @section('js')
-    <script> console.log('AdminLTE cargado correctamente'); </script>
+    <script> console.log('AdminLTE funciona'); </script>
 @stop 

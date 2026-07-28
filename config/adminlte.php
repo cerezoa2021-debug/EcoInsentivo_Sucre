@@ -336,7 +336,13 @@ return [
             'url' => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
         ],
-        
+
+        [
+            'text' => 'Reguistro de residuos',
+            'url' => 'residuos',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+
         [
             'text' => 'centros de acopio',
             'url' => 'centros-acopio',
