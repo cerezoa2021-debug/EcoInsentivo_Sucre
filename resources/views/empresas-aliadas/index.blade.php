@@ -1,5 +1,9 @@
 @extends('adminlte::page')
 
+@section('css')
+    @vite('resources/css/app.css')
+@stop
+
 @section('title', 'Negocios Aliados')
 
 @section('content_header')

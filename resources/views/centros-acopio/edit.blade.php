@@ -2,6 +2,10 @@
 
 @section('title', 'Editar Centro de Acopio')
 
+@section('css')
+    @include('partials.eco-css')
+@stop
+
 @section('content_header')
     <h1>Editar Centro de Acopio</h1>
 @endsection

@@ -1,5 +1,6 @@
 @extends('adminlte::page')
 
+
 @section('title', 'Nuevo Centro de Acopio')
 
 @section('content_header')
@@ -8,6 +9,7 @@
 
 @section('css')
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+@vite('resources/css/app.css')
 <style>
     #mapa { height: 350px; border-radius: 4px; }
     #sugerencias { position: relative; z-index: 1000; }

@@ -9,6 +9,7 @@
 @section('css')
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <style>#mapa { height: 300px; border-radius: 4px; }</style>
+@vite('resources/css/app.css')
 @endsection
 
 @section('content')

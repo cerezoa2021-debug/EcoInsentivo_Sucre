@@ -1,3 +1,212 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --color-main: #AE7A51;
+    --color-main-dark: #8f6340;
+    --color-main-2: #8CB89F;
+    --color-main-2-dark: #6e9c82;
+    --color-neutral: #002211;
+    --color-neutral-soft: #0a3a26;
+    --color-minor: #A5CFE3;
+    --color-accent: #E7F6FC;
+}
+
+body {
+    background-color: #f4f9fb;
+}
+
+/* ===== Tipografía de datos ===== */
+.stat-number,
+.punto-valor {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* ===== Sidebar ===== */
+.main-sidebar,
+.main-sidebar::before {
+    background-color: var(--color-neutral) !important;
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active {
+    background-color: var(--color-main);
+    color: #fff;
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link {
+    color: var(--color-accent);
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link:hover {
+    background-color: var(--color-neutral-soft);
+    color: #fff;
+}
+
+.brand-link {
+    background-color: var(--color-neutral);
+    border-bottom: 1px solid var(--color-neutral-soft);
+}
+
+/* ===== Navbar superior ===== */
+.main-header.navbar {
+    background-color: #fff;
+    border-bottom: 3px solid var(--color-main);
+}
+
+.main-header .nav-link {
+    color: var(--color-neutral);
+}
+
+/* ===== Botones ===== */
+.btn-primary {
+    background-color: var(--color-main);
+    border-color: var(--color-main);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--color-main-dark);
+    border-color: var(--color-main-dark);
+}
+
+.btn-success {
+    background-color: var(--color-main-2);
+    border-color: var(--color-main-2);
+    color: var(--color-neutral);
+}
+.btn-success:hover,
+.btn-success:focus {
+    background-color: var(--color-main-2-dark);
+    border-color: var(--color-main-2-dark);
+    color: #fff;
+}
+
+/* ===== Badges de estado ===== */
+.badge-success {
+    background-color: var(--color-main-2);
+    color: var(--color-neutral);
+}
+
+.badge-secondary {
+    background-color: var(--color-minor);
+    color: var(--color-neutral);
+}
+
+/* ===== Cards ===== */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 34, 17, 0.06);
+}
+
+.card-header {
+    background-color: transparent;
+    border-bottom: 1px solid var(--color-minor);
+    font-weight: 600;
+    color: var(--color-neutral);
+}
+
+/* ===== Tarjetas de estadística con anillo ===== */
+.stat-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 34, 17, 0.06);
+}
+
+.stat-ring {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: conic-gradient(var(--ring-color, var(--color-main)) calc(var(--ring-pct, 70) * 1%), var(--color-accent) 0);
+}
+
+.stat-ring::before {
+    content: '';
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #fff;
+    display: block;
+}
+
+.stat-ring i {
+    position: absolute;
+    font-size: 1.1rem;
+    color: var(--ring-color, var(--color-main));
+}
+
+.stat-card .stat-ring {
+    position: relative;
+}
+
+.stat-body .stat-number {
+    font-size: 1.6rem;
+    color: var(--color-neutral);
+    line-height: 1;
+}
+
+.stat-body .stat-label {
+    font-size: 0.8rem;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/* ===== Tablas ===== */
+.table thead th {
+    border-top: none;
+    border-bottom: 2px solid var(--color-minor);
+    color: var(--color-neutral);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+/* ===== Fix conflicto Tailwind preflight vs Leaflet ===== */
+.leaflet-container {
+    box-sizing: content-box !important;
+}
+
+.leaflet-container img {
+    max-width: none !important;
+    max-height: none !important;
+}
+
+.leaflet-pane,
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-marker-shadow,
+.leaflet-tile-container,
+.leaflet-pane > svg,
+.leaflet-pane > canvas,
+.leaflet-zoom-box,
+.leaflet-image-layer,
+.leaflet-layer {
+    position: absolute !important;
+    left: 0;
+    top: 0;
+}
+
+.leaflet-control {
+    box-sizing: border-box !important;
+}
+
+.leaflet-container {
+    font: inherit;
+    line-height: normal;
+}
+
+.leaflet-bar a {
+    box-sizing: border-box !important;
+    line-height: 26px !important;
+}

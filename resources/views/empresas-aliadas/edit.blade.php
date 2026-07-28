@@ -1,5 +1,9 @@
 @extends('adminlte::page')
 
+@section('css')
+    @include('partials.eco-css')
+@stop
+
 @section('title', 'Editar Negocio')
 
 @section('content_header')

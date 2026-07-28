@@ -1,5 +1,9 @@
 @extends('adminlte::page')
 
+@section('css')
+    @vite('resources/css/app.css')
+@stop
+
 @section('title', 'Gestión de Puntos')
 
 @section('content_header')
