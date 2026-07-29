@@ -37,9 +37,16 @@ class User extends Authenticatable
     {
         return $this->hasMany(Canje::class);
     }
-    //perfil 
-    public function adminlte_profile_url()
+    
+
+    public function esAdmin(): bool
     {
-        return route('profile.edit');
+        return $this->rol === 'admin';
     }
+
+    public function esUsuario(): bool
+    {
+        return $this->rol === 'usuario';
+    }
+
 }

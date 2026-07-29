@@ -12,6 +12,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        $usuario = auth()->user();
+
         $inicioMes = Carbon::now()->startOfMonth();
         $inicioSemana = Carbon::now()->startOfWeek();
 
@@ -41,6 +43,12 @@ class DashboardController extends Controller
         $labelsSemana = array_values($nombresDias);
         $datosSemana = collect($nombresDias)->keys()->map(fn ($dia) => (float) ($registrosSemana[$dia] ?? 0))->toArray();
 
+        $misRegistros = Registro_reciclaje::with(['residuo', 'centroAcopio'])
+            ->where('user_id', $usuario->id)
+            ->latest('fecha')
+            ->take(10)
+            ->get();
+
         return view('dashboard', compact(
             'totalPuntos',
             'totalReciclado',
@@ -49,6 +57,7 @@ class DashboardController extends Controller
             'ultimosRegistros',
             'labelsSemana',
             'datosSemana',
+            'misRegistros',
         ));
     }
 }

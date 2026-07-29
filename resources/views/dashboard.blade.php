@@ -101,6 +101,37 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Mi historial de reciclaje</h3>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-sm mb-0">
+                        <tbody>
+                            @forelse ($misRegistros as $registro)
+                                <tr>
+                                    <td>
+                                        <div>{{ $registro->residuo->nombre }}</div>
+                                        <small class="text-muted">{{ $registro->centroAcopio->nombre }} · {{ $registro->cantidad }}</small>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="badge {{ $registro->estado === 'confirmado' ? 'badge-success' : 'badge-secondary' }}">
+                                            {{ $registro->estado === 'confirmado' ? '+'.$registro->puntos_generados : 'Pendiente' }}
+                                        </span>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr><td class="text-center text-muted p-3">Aún no tienes registros de reciclaje.</td></tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 @stop
 
 @section('js')

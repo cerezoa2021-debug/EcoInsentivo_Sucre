@@ -2,10 +2,6 @@
 
 @section('title', 'Editar Centro de Acopio')
 
-@section('css')
-    @include('partials.eco-css')
-@stop
-
 @section('content_header')
     <h1>Editar Centro de Acopio</h1>
 @endsection
@@ -17,6 +13,7 @@
     #sugerencias { position: relative; z-index: 1000; }
     #sugerencias .list-group-item { cursor: pointer; }
 </style>
+@vite('resources/css/app.css')
 @endsection
 
 @section('content')
