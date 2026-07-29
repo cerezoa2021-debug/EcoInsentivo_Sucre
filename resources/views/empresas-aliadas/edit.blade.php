@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('css')
-    @include('partials.eco-css')
+    @vite('resources/css/app.css')
 @stop
 
 @section('title', 'Editar Negocio')
